@@ -3,7 +3,7 @@ import { getToken, removeToken } from './auth';
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Adjust this to your backend URL
+  baseURL: 'https://college-resource-hub.onrender.com/api', // Adjust this to your backend URL
   headers: {
     'Content-Type': 'application/json',
   },
