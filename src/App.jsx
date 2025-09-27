@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import UploadResource from './pages/UploadResource';
 import AllResources from './pages/AllResources';
+import About from './pages/About';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 import { isAuthenticated } from './utils/auth';
@@ -25,14 +26,9 @@ function App() {
         <Navbar authenticated={authenticated} setAuthenticated={setAuthenticated} />
         <Routes>
           {/* Public Routes */}
-          <Route 
-            path="/login" 
-            element={!authenticated ? <Login setAuthenticated={setAuthenticated} /> : <Navigate to="/dashboard" replace />} 
-          />
-          <Route 
-            path="/register" 
-            element={!authenticated ? <Register setAuthenticated={setAuthenticated} /> : <Navigate to="/dashboard" replace />} 
-          />
+          <Route path="/login" element={!authenticated ? <Login setAuthenticated={setAuthenticated} /> : <Navigate to="/dashboard" replace />} />
+          <Route path="/register" element={!authenticated ? <Register setAuthenticated={setAuthenticated} /> : <Navigate to="/dashboard" replace />} />
+          <Route path="/about" element={<About />} />
           {/* Protected Routes */}
           <Route path="/dashboard" element={
             <ProtectedRoute>
