@@ -104,11 +104,11 @@ const Dashboard = () => {
               })}
             </div>
             <span className="ml-1">{resource.averageRating?.toFixed(1) || "0.0"}</span>
-            <span className="text-gray-400 ml-1">({resource.totalRatings || 0})</span>
+            <span className="text-gray-400 ml-1">({resource.ratingCount || 0})</span>
           </div>
           <div className="flex items-center">
             <Download className="h-4 w-4 text-green-500 mr-1" />
-            <span>{resource.downloadCount || 0} downloads</span>
+            <span>{resource.downloads || 0} downloads</span>
           </div>
         </div>
       </div>
